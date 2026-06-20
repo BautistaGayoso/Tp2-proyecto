@@ -1,0 +1,34 @@
+import Usuario from "./Usuario.js"
+import Piloto from "./Piloto.js"
+import Constructor from "./Constructor.js"
+import Equipo from "./Equipo.js"
+import Torneo from "./Torneo.js";
+
+// relaciones
+
+Usuario.hasOne(Equipo, { foreignKey: "userId" })
+Equipo.belongsTo(Usuario, { foreignKey: "userId"})
+
+Equipo.belongsTo(Piloto, { as: "pilot1", foreignKey: "pilot1Id" })
+Equipo.belongsTo(Piloto, { as: "pilot2", foreignKey: "pilot2Id" })
+
+Equipo.belongsTo(Constructor, {
+    as: "equipo",
+    foreignKey: "constructorId"
+})
+
+Usuario.hasMany(Torneo, {
+    foreignKey: "userId",
+    onDelete: "CASCADE"
+});
+
+Torneo.belongsTo(Usuario, {
+    foreignKey: "userId"
+});
+export {
+    Usuario,
+    Piloto,
+    Constructor,
+    Equipo,
+    Torneo
+}

@@ -1,0 +1,33 @@
+{
+  "name": "tp-final-tp2",
+  "version": "1.0.0",
+  "description": "\"# TP2\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --env-file .env.dev --watch index.js",
+    "local": "node --env-file .env.local --watch index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BautistaGayoso/Tp2-proyecto.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BautistaGayoso/Tp2-proyecto/issues"
+  },
+  "homepage": "https://github.com/BautistaGayoso/Tp2-proyecto#readme",
+    "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.1",
+    "mysql2": "^3.15.3",
+    "sequelize": "^6.37.7"
+  }
+}
