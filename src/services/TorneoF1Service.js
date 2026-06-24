@@ -35,7 +35,13 @@ class TorneoF1Service {
     getParticipantes = async (torneoId) => {
 
         const torneo = await Torneo.findByPk(torneoId, {
-        include: Usuario
+        include: [{
+            model: Usuario,
+            as: "participantes",
+            through: {
+                attributes: []
+            }
+        }]
     })
 
         return torneo

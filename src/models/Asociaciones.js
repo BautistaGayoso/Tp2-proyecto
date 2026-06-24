@@ -15,13 +15,13 @@ Equipo.belongsTo(Piloto, { as: "pilot2", foreignKey: "pilot2Id" })
 
 Equipo.belongsTo(Constructor, {as: "team",foreignKey: "constructorId"})
 
-Usuario.hasMany(Torneo, {foreignKey: "userId",})
+Usuario.hasMany(Torneo, {as: "torneosCreados",foreignKey: "userId",})
 
-Torneo.belongsTo(Usuario, {foreignKey: "userId"})
+Torneo.belongsTo(Usuario, {as: "creador",foreignKey: "userId"})
 
-Usuario.belongsToMany(Torneo, {through: Participantes,foreignKey: "userId"})
+Usuario.belongsToMany(Torneo, {through: Participantes,as: "torneos",foreignKey: "userId"})
 
-Torneo.belongsToMany(Usuario, {through: Participantes,foreignKey: "torneoId"})
+Torneo.belongsToMany(Usuario, {through: Participantes,as: "participantes",foreignKey: "torneoId"})
 
 export {
     Usuario,

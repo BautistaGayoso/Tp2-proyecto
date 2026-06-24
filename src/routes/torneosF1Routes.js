@@ -11,12 +11,12 @@ router.post("/:torneoId/participantes", torneoF1Controller.joinTorneo)
 
 router.get("/",torneoF1Controller.getAllTorneos);
 
-router.get("/:id",torneoF1Controller.getTorneoById);
+router.get("/:torneoId",torneoF1Controller.getTorneoById);
 
 router.get("/:torneoId/participantes", torneoF1Controller.getParticipantes)
 
-router.put("/:id",torneoF1Controller.updateTorneo);
+router.put("/:torneoId",torneoF1Controller.updateTorneo);
 
-router.delete("/:id",torneoF1Controller.deleteTorneo);
+router.delete("/torneoId",torneoF1Controller.deleteTorneo);
 
 export default router;
