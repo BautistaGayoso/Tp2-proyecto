@@ -13,13 +13,12 @@ Equipo.belongsTo(Piloto, { as: "pilot1", foreignKey: "pilot1Id" })
 Equipo.belongsTo(Piloto, { as: "pilot2", foreignKey: "pilot2Id" })
 
 Equipo.belongsTo(Constructor, {
-    as: "equipo",
+    as: "team",
     foreignKey: "constructorId"
 })
 
 Usuario.hasMany(Torneo, {
     foreignKey: "userId",
-    onDelete: "CASCADE"
 });
 
 Torneo.belongsTo(Usuario, {

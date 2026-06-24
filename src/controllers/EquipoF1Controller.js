@@ -9,7 +9,7 @@ class EquipoF1Controller {
 
             const { userId } = req.params
 
-            const equipo = await EquipoF1Service.getEquipoByUser(userId)
+            const equipo = await equipoF1Service.getEquipoByUser(userId)
 
             res.status(200).send({
                 success: true,
@@ -30,7 +30,7 @@ class EquipoF1Controller {
 
             const { userId } = req.params
 
-            const equipo = await EquipoF1Service.updateEquipo(userId,req.body)
+            const equipo = await equipoF1Service.updateEquipo(userId,req.body)
 
             res.status(200).send({
                 success: true,

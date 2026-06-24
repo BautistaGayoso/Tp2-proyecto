@@ -31,10 +31,10 @@ Usuario.init({
             is: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/
         }
     },
-profile_pic: {
-    type: DataTypes.STRING,
-    allowNull: true
-}
+    profile_pic: {
+        type: DataTypes.STRING,
+        allowNull: true
+    }
 },{
     sequelize: connection,
     modelName: "Usuario"

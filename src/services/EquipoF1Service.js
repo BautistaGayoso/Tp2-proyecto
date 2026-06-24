@@ -21,7 +21,7 @@ class EquipoF1Service {
             include: [
                 { model: Piloto, as: "pilot1" },
                 { model: Piloto, as: "pilot2" },
-                { model: Constructor, as: "equipo"}
+                { model: Constructor, as: "team"}
             ]
         })
 
@@ -33,18 +33,23 @@ class EquipoF1Service {
     }
 
 updateEquipo = async (userId, data) => {
-    console.log("DATA:", data)
+    
 
     const equipo = await Equipo.findOne({
         where: { userId }
     })
+
+    console.log("DATA:", data);
+    console.log("pilot1Id:", data.pilot1Id);
+    console.log("pilot2Id:", data.pilot2Id);
+
 
     if(!equipo){
         throw new Error("equipo no encontrado")
     }
     if(data.pilot1Id){
 
-        const piloto = await Piloto.findByPk(data.pilot1Id)
+        const piloto = await Piloto.findByPk(equipo.pilot1Id)
 
         if(equipo.budget < piloto.price){
             throw new Error("presupuesto insuficiente")

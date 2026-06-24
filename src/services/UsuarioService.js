@@ -4,17 +4,17 @@ import Usuario from "../models/Usuario.js"
 class UserService{
 
 
-getUserById = async (id) => {
+getUsuarioById = async (id) => {
     const usuario = await Usuario.findByPk(id)
     return{name: usuario.name, mail: usuario.mail} 
 }
 
-createUser = async(data) =>{
+createUsuario = async(data) =>{
     const {id,name,mail} = await Usuario.create(data)
     return {id,name,mail}
 }
 
-updateUser= async (data) => {
+updateUsuario= async (data) => {
     const usuario = await Usuario.findByPk(data.id)
     if (!usuario){
     throw new Error(`usuario no encontrado`)
@@ -24,7 +24,7 @@ updateUser= async (data) => {
     return usuario
 } 
 
-deleteUser = async(data) =>{
+deleteUsuario = async(data) =>{
 
     const usuario = await Usuario.findByPk(data.id)
     // const deleted = await Usuario.destroy({where: {id: data.id}})
@@ -47,7 +47,7 @@ deleteUser = async(data) =>{
     return `usuario eliminado`
 }
 
-getAllUsers =async()=>{
+getAllUsuarios =async()=>{
     const users = await Usuario.findAll({
         attributes: ["name", "mail", "password", ]
     })

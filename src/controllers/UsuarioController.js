@@ -25,8 +25,8 @@ getUsuarioById = async (req,res) => {
 
 createUsuario = async(req,res)=>{
 try {
-    const {name,mail,pass} = req.body
-    const usuario = await this.usuarioService.createusuario({name,mail,pass})
+    const {name,mail,password} = req.body
+    const usuario = await this.usuarioService.createUsuario({name,mail,password})
     await this.equipoService.createEquipo(usuario.id)
     res.status(200).send({
     success: true,
@@ -94,8 +94,8 @@ getAllUsuarios =async(req,res)=>{
 
 login = async (req, res) => {
     try {
-        const {mail, pass} = req.body;
-        const usuario = await this.usuarioService.login({mail, pass});
+        const {mail, password} = req.body;
+        const usuario = await this.usuarioService.login({mail, password});
         res.status(200).send({ success: true, usuario });
     } catch (error) {
         res.status(400).send({ success: false, message: error.message });
