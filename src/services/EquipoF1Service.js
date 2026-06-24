@@ -39,10 +39,6 @@ updateEquipo = async (userId, data) => {
         where: { userId }
     })
 
-    console.log("DATA:", data);
-    console.log("pilot1Id:", data.pilot1Id);
-    console.log("pilot2Id:", data.pilot2Id);
-
 
     if(!equipo){
         throw new Error("equipo no encontrado")
