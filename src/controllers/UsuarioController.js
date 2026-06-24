@@ -95,10 +95,16 @@ getAllUsuarios =async(req,res)=>{
 login = async (req, res) => {
     try {
         const {mail, password} = req.body;
+        
         const usuario = await this.usuarioService.login({mail, password});
-        res.status(200).send({ success: true, usuario });
+
+        res.status(200).send({ 
+            success: true, 
+            usuario });
     } catch (error) {
-        res.status(400).send({ success: false, message: error.message });
+        res.status(400).send({
+            success: false, 
+            message: error.message });
     }
 }
 

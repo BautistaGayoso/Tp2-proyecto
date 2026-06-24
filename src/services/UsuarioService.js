@@ -61,9 +61,9 @@ login = async ({ mail, password}) => {
     });
     if (!usuario) throw new Error("usuario not found");
 
-    const validatepassword= await usuario.validatepassword(password);
+    const validarpassword = await usuario.validatePassword(password);
     
-    if (usuario.password !== password) {
+    if (validarpassword) {
     throw new Error("Invalid password");
 }
 return {

@@ -4,8 +4,8 @@ import bcrypt from "bcrypt"
 
 
 class Usuario extends Model {
-    validatePassword = async (pass) => {
-    return await bcrypt.compare(pass, this.pass);
+    validatePassword = async (password) => {
+    return await bcrypt.compare(password, this.password);
     }       
 }
 
