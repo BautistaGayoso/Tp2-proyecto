@@ -8,7 +8,7 @@ class Piloto extends Model{}
         autoIncrement: true,
         primaryKey: true
     },
-    driverId: {
+    pilotoId: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true

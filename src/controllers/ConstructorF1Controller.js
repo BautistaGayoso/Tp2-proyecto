@@ -1,7 +1,7 @@
-import F1Service from "../services/F1Service.js"
+// import F1Service from "../services/F1Service.js"
 import ConstructorF1Service from "../services/ConstructorF1Service.js"
 
-const f1service = new F1Service()
+// const f1service = new F1Service()
 const constructorF1Service = new ConstructorF1Service()
 class ConstructorF1Controller{
 
@@ -21,7 +21,6 @@ class ConstructorF1Controller{
         }
     }
 
-
     
     getConstructoresFromDB = async (req,res) => {
         try{
@@ -34,23 +33,24 @@ class ConstructorF1Controller{
     }
     
     
-}
 
-syncConstructores = async (req,res) => {
-    try{
-        const constructoresFromApi = await f1service.getConstructores()
-        const result = await constructorService.syncConstructores(constructoresFromApi)
-        
-        res.status(200).json({
-            message: "Constructores sincronizados correctamente",
-            result
-        })
-    }catch(error){
-        console.error(error);
-        res.status(500).json({ error: 'Error al sincronizar los constructores'})
-        
-    }
+
 }
 
 export default ConstructorF1Controller
 
+// syncConstructores = async (req,res) => {
+//     try{
+//         const constructoresFromApi = await f1service.getConstructores()
+//         const result = await constructorF1Service.syncConstructores(constructoresFromApi)
+        
+//         res.status(200).json({
+//             message: "Constructores sincronizados correctamente",
+//             result
+//         })
+//     }catch(error){
+//         console.error(error);
+//         res.status(500).json({ error: 'Error al sincronizar los constructores'})
+        
+//     }
+// }

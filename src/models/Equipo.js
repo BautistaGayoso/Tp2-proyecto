@@ -1,8 +1,9 @@
 import {DataTypes,Model} from "sequelize"
 import connection from "../db/connection.js"
 
-class equipo extends Model{}
- equipo.init({
+class Equipo extends Model{}
+
+Equipo.init({
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -25,7 +26,7 @@ class equipo extends Model{}
     }
 },{
     sequelize: connection,
-    modelName:  "equipo"
+    modelName:  "Equipo"
 })
 
-export default equipo
+export default Equipo

@@ -1,4 +1,4 @@
-import { DataTypes, Sequelize } from "sequelize";
+import { DataTypes, Model } from "sequelize";
 import connection from "../db/connection.js";
 
 

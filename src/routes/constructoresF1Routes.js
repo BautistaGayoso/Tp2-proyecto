@@ -12,7 +12,7 @@ constructorF1Routes.get("/:id", constructoresF1Controller.getConstructoresById )
 
 export default constructorF1Routes
 
-// constructorF1Routes.post("/sync-constructors", constructorsF1Controller.syncConstructors)
+// constructorF1Routes.post("/sync-constructores", constructoresF1Controller.syncConstructores)
 //https://api.jolpi.ca/ergast/f1/2026/driverstandings.json
 //https://api.jolpi.ca/ergast/f1/2026/results.json
 

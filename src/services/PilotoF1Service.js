@@ -50,9 +50,9 @@ class PilotoF1Service {
         
         for (const piloto of pilotosFromApi) {
             const [pilotoSaved, created] = await Piloto.findOrCreate({
-                where: { pilotoId: piloto.pilotoId },
+                where: { pilotoId: piloto.driverId },
                 defaults: {
-                    pilotoId: piloto.pilotoId,
+                    pilotoId: piloto.driverId,
                     permanentNumber: piloto.permanentNumber,
                     givenName: piloto.givenName,
                     familyName: piloto.familyName,
